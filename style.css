@@ -1,0 +1,335 @@
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Nunito', 'Arial Rounded MT Bold', 'Segoe UI', sans-serif;
+    font-weight: 500;
+    background-color: #fefcf5;
+    color: #1e2a2e;
+    line-height: 1.5;
+}
+
+/* ---------- CONTAINER (centers content) ---------- */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ---------- HEADER ---------- */
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #e9e4d8;
+    padding: 0.5rem 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;   /* logo left, language toggle right */
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+/* Language toggle buttons */
+.language-toggle {
+    display: flex;
+    gap: 0.5rem;
+    background: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 40px;
+}
+
+.lang-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+    color: #47804b;
+}
+
+.lang-btn.active {
+    background: #47804b;
+    color: white;
+    font-size: 1.2rem;      /* active language is larger */
+    font-weight: 800;
+    padding: 0.3rem 1rem;
+}
+
+.lang-btn:not(.active) {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.lang-btn:hover { opacity: 1; }
+
+/* Brand group (name + subtitle) */
+.brand-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+}
+
+.logo-img {
+    height: 90px;
+    width: auto;
+    display: block;
+}
+
+.company-name {
+    font-size: 2.5rem;
+    font-weight: 790;
+    letter-spacing: -0.3px;
+    color: #47804b;
+    line-height: 0.7;
+}
+
+.company-subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #3894d1;
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+    font-family: inherit;
+}
+
+/* ---------- DOUBLE SECTION (image + text) ---------- */
+.double-section {
+    padding: 2.5rem 0;
+    background: #ffffff;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* image right edge exactly in the middle */
+    gap: 0;
+    align-items: start;                /* text top aligns with image top */
+}
+
+.col-image {
+    width: 100%;
+    min-width: 0;
+}
+
+.col-text {
+    width: 100%;
+    min-width: 0;
+    padding-left: 2rem;               /* visual space between columns */
+}
+
+.feature-img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+    display: block;
+    object-fit: cover;
+}
+
+/* Description text styles */
+.company-description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #47804b;
+    border-left: 5px solid #47804b;
+    padding-left: 0.5rem;
+    font-weight: 800;
+}
+
+.company-description p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #3894d1;
+    font-weight: 500;
+}
+
+/* ---------- LOWER SECTION (contact card) ---------- */
+.lower-section {
+    padding: 0.5rem 0 6rem 0;
+    background: #ffffff;
+}
+
+.contact-card {
+    background-image: url('images/Kanahollimg2.webp');
+    background-size: cover;            /* fills the card, shows more of the image */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 3rem 6rem 3rem;     /* extra bottom padding reveals more background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    margin-top: -3rem;
+    letter-spacing: -0.2px;
+    color: white;
+    -webkit-text-stroke: 2px rgb(89,106,129);
+    text-stroke: 2px black;
+    display: inline-block;
+}
+
+.contact-info-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0.5rem;
+}
+
+.contact-details-left {
+    flex: 1 1 auto;
+    max-width: 600px;                  /* comfortably wide, aligned with double section */
+    text-align: left;
+    background: rgba(0,0,0,0.226);
+    backdrop-filter: blur(8px);
+    padding: 1.8rem 2rem;
+    border-radius: 32px;
+    font-weight: 600;
+}
+
+.contact-details-left p {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    word-break: break-word;   /* adds safety for long text */
+    overflow-wrap: break-word;
+}
+
+.contact-details-left .emoji {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width: 860px) {
+    .two-columns {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .col-text {
+        padding-left: 0;
+    }
+    .company-name {
+        font-size: 1.6rem;
+    }
+    .logo-img {
+        height: 50px;
+    }
+    .company-subtitle {
+        font-size: 0.75rem;
+    }
+    .brand-group {
+        gap: 0.1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .contact-info-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .contact-details-left {
+        max-width: 90%;
+        text-align: center;
+        padding: 1.2rem 1.2rem;  /* reduce padding on mobile */
+    }
+    .contact-details-left p {
+        justify-content: center;
+        flex-wrap: wrap;          /* allow wrapping of emoji + text */
+        word-break: break-word;   /* break long email addresses */
+        overflow-wrap: break-word; /* modern equivalent */
+        white-space: normal;      /* ensure wrapping */
+    }
+    .contact-title {
+        font-size: 2.2rem;
+    }
+    .lower-section {
+        padding: 0.5rem 0 4rem 0;
+    }
+}
+
+/* ---------- FOOTER ---------- */
+.main-footer {
+    background: #1f2a1b;
+    color: #cfd8c5;
+    padding: 1.8rem 0;
+    text-align: center;
+    border-top: 1px solid #3a4832;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.footer-links a {
+    color: #e2cfaa;
+    text-decoration: none;
+    margin: 0 0.6rem;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    color: #ffefc0;
+    text-decoration: underline;
+}
+
+/* ---------- GLOBAL IMAGE RULE ---------- */
+img {
+    max-width: 100%;
+    height: auto;
+}

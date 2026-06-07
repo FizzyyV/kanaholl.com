@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanaholl - Viðhalds og tæknilausnir</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- SEO & Social Media Metadata -->
+    <meta name="description" content="Innflutningur varahluta, viðgerðarþjónusta og tæknileg ráðgjöf fyrir vélar og tæki. Kanaholl – staðsett í Sandgerði, Íslandi.">
+    <meta name="keywords" content="varahlutir, viðgerðarþjónusta, tæknileg ráðgjöf, innflutningur varahluta, Sandgerði, Reykjavík, Kanaholl, Ísland">
+    <meta name="author" content="Kanahóll">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:title" content="Kanaholl – Varahlutir, viðgerðir og tækniráðgjöf">
+    <meta property="og:description" content="Innflutningur varahluta, efna og búnaðar. Viðgerðarþjónusta og tæknileg ráðgjöf. Hafðu samband!">
+    <meta property="og:image" content="https://kanaholl.com/images/Kanahollimg1.webp">
+    <meta property="og:url" content="https://kanaholl.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="is_IS">
+
+    <!-- Twitter Card (optional but recommended) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kanaholl – Varahlutir, viðgerðir og tækniráðgjöf">
+    <meta name="twitter:description" content="Viðhald og tæknilausnir – varahlutir, viðgerðir, ráðgjöf. Staðsett í Sandgerði, Íslandi.">
+    <meta name="twitter:image" content="https://kanaholl.com/images/Kanahollimg1.webp">
+
+    <!-- Favicon (using your SVG logo) -->
+    <link rel="icon" type="image/svg+xml" href="images/KanahollLogo.svg">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container header-inner">
+        <div class="header-left">
+            <img src="images/KanahollLogo.svg" alt="Kanaholl logo" class="logo-img">
+            <div class="brand-group">
+                <span class="company-name">Kanahóll</span>
+                <div class="company-subtitle">Viðhalds og tæknilausnir</div>
+            </div>
+        </div>
+        <div class="language-toggle">
+            <button id="lang-en" class="lang-btn active">ENG</button>
+            <button id="lang-is" class="lang-btn">ÍS</button>
+        </div>
+    </div>
+</header>
+
+<section class="double-section">
+    <div class="container">
+        <div class="two-columns">
+            <div class="col-image">
+                <img src="images/Kanahollimg1.webp" alt="Kanaholl scenic view" class="feature-img">
+            </div>
+            <div class="col-text">
+                <div class="company-description">
+                    <h2 id="desc-title">Varahlutir og þjónusta.</h2>
+                    <p id="desc-text1">Innflutningur varahluta, efna og ýmis búnaðar í breiða flóru véla og tækja.</p>
+                    <p id="desc-text2">Viðgerðarþjónusta.</p>
+                    <p id="desc-text3">Tæknileg ráðgjöf.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="lower-section">
+    <div class="container">
+        <div class="contact-card">
+            <div class="contact-content">
+                <div class="contact-title" id="contact-title">Contact</div>
+                <div class="contact-info-row">
+                    <div class="contact-details-left">
+                        <p id="contact-location"><span class="emoji">📍</span> Iceland, Sandgerði</p>
+                        <p id="contact-phone"><span class="emoji">📞</span> +354 867 8900</p>
+                        <p id="contact-email"><span class="emoji">✉️</span> kanaholl@kanaholl.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="copyright" id="copyright">© 2025 Kanaholl – Viðhalds og tæknilausnir</div>
+    </div>
+</footer>
+
+<script>
+    const translations = {
+        "desc-title": {
+            is: "Varahlutir og þjónusta.",
+            en: "Spare parts and services."
+        },
+        "desc-text1": {
+            is: "Innflutningur varahluta, efna og ýmis búnaðar í breiða flóru véla og tækja.",
+            en: "Import of spare parts, materials and various equipment for a wide range of machines and equipment."
+        },
+        "desc-text2": {
+            is: "Viðgerðarþjónusta.",
+            en: "Repair services."
+        },
+        "desc-text3": {
+            is: "Tæknileg ráðgjöf.",
+            en: "Technical consulting."
+        },
+        "contact-title": {
+            is: "Hafðu samband",
+            en: "Contact"
+        },
+        "contact-location": {
+            is: "📍Ísland, Sandgerði",
+            en: "📍Iceland, Sandgerði"
+        },
+        "contact-phone": {
+            is: "📞 +354 867 8900",
+            en: "📞 +354 867 8900"
+        },
+        "contact-email": {
+            is: "✉️ kanaholl@kanaholl.com",
+            en: "✉️ kanaholl@kanaholl.com"
+        },
+        "copyright": {
+            is: "© 2025 Kanaholl – Viðhalds og tæknilausnir",
+            en: "© 2025 Kanaholl – Maintenance & Technical Solutions"
+        }
+    };
+
+    function setLanguage(lang) {
+        for (const [id, texts] of Object.entries(translations)) {
+            const el = document.getElementById(id);
+            if (el) el.innerText = texts[lang];
+        }
+        document.getElementById("lang-en").classList.toggle("active", lang === "en");
+        document.getElementById("lang-is").classList.toggle("active", lang === "is");
+    }
+
+    document.getElementById("lang-en").addEventListener("click", () => setLanguage("en"));
+    document.getElementById("lang-is").addEventListener("click", () => setLanguage("is"));
+    setLanguage("en");
+</script>
+
+</body>
+</html>
